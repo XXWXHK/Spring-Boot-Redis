@@ -24,7 +24,6 @@ public class SpringBootRedisApplicationTests {
     public void contextLoads() {
     }
 
-
     /**
      * 测试 插入一条记录（选择字段，策略插入，Redis）
      */
@@ -37,7 +36,6 @@ public class SpringBootRedisApplicationTests {
 
         System.err.println(user);
     }
-
 
     /**
      * 测试 TableId 注解存在更新记录，否插入一条记录，Redis
@@ -55,4 +53,17 @@ public class SpringBootRedisApplicationTests {
 
         System.err.println(user);
     }
+
+    /**
+     * 测试 根据 ID 删除，Redis
+     */
+    @Test
+    public void removeByIdCacheEvict() {
+
+        boolean removeByIdCacheEvict = userService.removeByIdCacheEvict(26);
+
+        System.err.println(removeByIdCacheEvict);
+    }
+
+
 }

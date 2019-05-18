@@ -7,6 +7,7 @@ import cn.com.xuxiaowei.springbootredis.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -79,6 +80,22 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @CacheEvict(value = USER, key = "#id")
     public boolean removeByIdCacheEvict(Integer id) {
         return super.removeById(id);
+    }
+
+    /**
+     * 根据 ID 查询，Redis
+     * <p>
+     * 进入方法前，Spring 会先去缓存服务器中查找对应 Key 的缓存值，
+     * 如果找到缓存值，那么 Spring 将不会再调用方法，而是将缓存值缓存值读出，返回给调用者（没有执行SQL）；
+     * 如果没有找到缓存值，那么 Spring 就会执行你的方法，将最后的结果通过 Key 保存到缓存服务器中（执行了SQL）
+     *
+     * @param id 主键ID，与实体类的主键类型相同
+     * @return 返回 查询结果（实体类对象）
+     */
+    @Override
+    @Cacheable(value = USER, key = "#id")
+    public User getByIdCacheable(Integer id) {
+        return super.getById(id);
     }
 
 }

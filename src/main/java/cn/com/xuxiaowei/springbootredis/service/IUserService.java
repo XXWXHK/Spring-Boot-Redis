@@ -18,12 +18,21 @@ public interface IUserService extends IService<User> {
      * <p>
      * 无论如何都插入到数据并保存到Redis
      * <p>
-     * value 放入Redis中的值
-     * key 实体类的主键（需要有唯一性）
      *
      * @param entity 要插入的实体对象
      * @return 实体对象（插入结果返回了实体类主键）
      */
     User saveCachePut(User entity);
 
+    /**
+     * <p>
+     * TableId 注解存在更新记录，否插入一条记录，Redis
+     * </p>
+     * 无论如何都 插入/更新 到数据并保存到Redis
+     * <p>
+     *
+     * @param entity 实体对象
+     * @return 返回 插入/更新 到数据库/Redis的实体类对象（含主键）
+     */
+    User saveOrUpdateCachePut(User entity);
 }

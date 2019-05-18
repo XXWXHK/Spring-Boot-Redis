@@ -30,6 +30,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * @param entity 要插入的实体对象
      * @return 实体对象（插入结果返回了实体类主键）
      */
+    @Override
     @CachePut(value = "User", key = "#entity.id")
     public User saveCachePut(User entity) {
         int insert = super.baseMapper.insert(entity);

@@ -65,5 +65,15 @@ public class SpringBootRedisApplicationTests {
         System.err.println(removeByIdCacheEvict);
     }
 
+    /**
+     * 测试 根据 ID 删除，Redis
+     */
+    @Test
+    public void getByIdCacheable() {
+
+        User user = userService.getByIdCacheable(20);
+
+        System.err.println(user);
+    }
 
 }

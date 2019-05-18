@@ -38,4 +38,21 @@ public class SpringBootRedisApplicationTests {
         System.err.println(user);
     }
 
+
+    /**
+     * 测试 TableId 注解存在更新记录，否插入一条记录，Redis
+     */
+    @Test
+    public void saveOrUpdateCachePut() {
+
+        User user = new User().setNickname("测试昵称" + LocalTime.now());
+
+        // 存在主键，修改数据，
+        // 不存在主键，保存数据
+        user.setId(30);
+
+        userService.saveOrUpdateCachePut(user);
+
+        System.err.println(user);
+    }
 }

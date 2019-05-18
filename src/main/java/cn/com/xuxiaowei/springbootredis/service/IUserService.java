@@ -35,4 +35,18 @@ public interface IUserService extends IService<User> {
      * @return 返回 插入/更新 到数据库/Redis的实体类对象（含主键）
      */
     User saveOrUpdateCachePut(User entity);
+
+    /**
+     * 根据 ID 删除，Redis
+     * <p>
+     * 移除缓存对应的 Key 的值
+     * <p>
+     * value 放入Redis中的值
+     * key 实体类的主键（需要有唯一性）
+     *
+     * @param id 主键 ID，与实体类的主键类型相同
+     * @return 返回 删除状态
+     */
+    boolean removeByIdCacheEvict(Integer id);
+
 }

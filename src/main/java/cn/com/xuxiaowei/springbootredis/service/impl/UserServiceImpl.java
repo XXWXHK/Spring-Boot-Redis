@@ -5,6 +5,7 @@ import cn.com.xuxiaowei.springbootredis.framework.tool.SuperSqlHelper;
 import cn.com.xuxiaowei.springbootredis.mapper.UserMapper;
 import cn.com.xuxiaowei.springbootredis.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * 无论如何都插入到数据并保存到Redis
      * <p>
      * value 放入Redis中的值
-     * key 实体类的主键（需要有唯一性）
+     * key 实体类的主键（需要有唯一性），从对象中获取
      *
      * @param entity 要插入的实体对象
      * @return 实体对象（插入结果返回了实体类主键）
@@ -51,7 +52,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * 无论如何都 插入/更新 到数据并保存到Redis
      * <p>
      * value 放入Redis中的值
-     * key 实体类的主键（需要有唯一性）
+     * key 实体类的主键（需要有唯一性），从对象中获取
      *
      * @param entity 实体对象
      * @return 返回 插入/更新 到数据库/Redis的实体类对象（含主键）
@@ -61,6 +62,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public User saveOrUpdateCachePut(User entity) {
         boolean update = super.saveOrUpdate(entity);
         return SuperSqlHelper.retBool(update, entity);
+    }
+
+    /**
+     * 根据 ID 删除，Redis
+     * <p>
+     * 移除缓存对应的 Key 的值
+     * <p>
+     * value 放入Redis中的值
+     * key 实体类的主键（需要有唯一性）
+     *
+     * @param id 主键 ID，与实体类的主键类型相同
+     * @return 返回 删除状态
+     */
+    @Override
+    @CacheEvict(value = USER, key = "#id")
+    public boolean removeByIdCacheEvict(Integer id) {
+        return super.removeById(id);
     }
 
 }

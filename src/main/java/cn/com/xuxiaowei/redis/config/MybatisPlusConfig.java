@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis.config;
+package cn.com.xuxiaowei.redis.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan("cn.com.xuxiaowei.springbootredis.mapper.**")
+@MapperScan("cn.com.xuxiaowei.redis.mapper.**")
 public class MybatisPlusConfig {
 
     /**

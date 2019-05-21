@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis;
+package cn.com.xuxiaowei.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author xuxiaowei
  */
 @SpringBootApplication
-public class SpringBootRedisApplication {
+public class RedisApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootRedisApplication.class, args);
+        SpringApplication.run(RedisApplication.class, args);
     }
 
 }

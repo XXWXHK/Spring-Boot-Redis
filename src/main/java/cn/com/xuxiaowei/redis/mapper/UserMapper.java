@@ -1,6 +1,6 @@
-package cn.com.xuxiaowei.springbootredis.mapper;
+package cn.com.xuxiaowei.redis.mapper;
 
-import cn.com.xuxiaowei.springbootredis.entity.User;
+import cn.com.xuxiaowei.redis.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

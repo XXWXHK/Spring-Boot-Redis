@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis.config;
+package cn.com.xuxiaowei.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

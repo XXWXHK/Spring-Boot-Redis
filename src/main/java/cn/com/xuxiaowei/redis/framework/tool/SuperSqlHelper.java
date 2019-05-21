@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis.framework.tool;
+package cn.com.xuxiaowei.redis.framework.tool;
 
 /**
  * SQL 辅助类

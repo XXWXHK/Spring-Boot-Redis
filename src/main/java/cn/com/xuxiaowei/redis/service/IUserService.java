@@ -1,6 +1,6 @@
-package cn.com.xuxiaowei.springbootredis.service;
+package cn.com.xuxiaowei.redis.service;
 
-import cn.com.xuxiaowei.springbootredis.entity.User;
+import cn.com.xuxiaowei.redis.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis.controller;
+package cn.com.xuxiaowei.redis.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

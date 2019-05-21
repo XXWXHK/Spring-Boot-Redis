@@ -1,9 +1,9 @@
-package cn.com.xuxiaowei.springbootredis.service.impl;
+package cn.com.xuxiaowei.redis.service.impl;
 
-import cn.com.xuxiaowei.springbootredis.entity.User;
-import cn.com.xuxiaowei.springbootredis.framework.tool.SuperSqlHelper;
-import cn.com.xuxiaowei.springbootredis.mapper.UserMapper;
-import cn.com.xuxiaowei.springbootredis.service.IUserService;
+import cn.com.xuxiaowei.redis.entity.User;
+import cn.com.xuxiaowei.redis.framework.tool.SuperSqlHelper;
+import cn.com.xuxiaowei.redis.mapper.UserMapper;
+import cn.com.xuxiaowei.redis.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;

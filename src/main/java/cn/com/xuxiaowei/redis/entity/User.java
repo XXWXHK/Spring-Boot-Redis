@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis.entity;
+package cn.com.xuxiaowei.redis.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

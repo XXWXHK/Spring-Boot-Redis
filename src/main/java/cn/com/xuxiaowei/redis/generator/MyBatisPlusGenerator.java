@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootredis.generator;
+package cn.com.xuxiaowei.redis.generator;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -25,7 +25,7 @@ public class MyBatisPlusGenerator {
     /**
      * 父包名
      */
-    private String parent = "cn.com.xuxiaowei.springbootredis";
+    private String parent = "cn.com.xuxiaowei.redis";
 
     /**
      * 作者
